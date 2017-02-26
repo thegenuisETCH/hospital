@@ -3,6 +3,7 @@
 	<title>Registration</title>
 	<?php include 'js.php'; include 'style.php'; ?>
 	<link rel="stylesheet" type="text/css" href="css/reg-style.css">
+	<link rel="stylesheet" type="text/css" href="css/login.css">
 </head>
 <body>
 	<div class="container">
@@ -13,7 +14,7 @@
 					<form>
 						<div class="col-sm-12">
 							<?php 
-							$conn=mysqli_connect("localhost","root","0000","hospital");
+							$conn=mysqli_connect("localhost","root","","hospital");
 							$query = "SELECT id FROM users ORDER BY id DESC LIMIT 1";
 							$result=mysqli_query($conn,$query);
 							foreach ($result as $key) {

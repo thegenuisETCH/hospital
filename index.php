@@ -1,10 +1,11 @@
 <html>
 <head>
-	<title>Doctor Website Template | Home </title>
+	<title>Doctor Website | Home </title>
+	<meta charset="UTF-8">
 	<?php include 'js.php'; include 'style.php'; include 'js-index.php' ?>
 </head>
 <body>
-<div id="home" class="header">
+	<div id="home" class="header">
 		<div class="top-header">
 			<div class="container">
 				<div class="logo">
@@ -17,6 +18,8 @@
 						<li><a href="#services" class="scroll">our services</a></li>
 						<li><a href="#team" class="scroll">our team</a></li>
 						<li><a href="#contact" class="scroll">Contact</a></li>
+						<li><a href="login.php" class="btn-default">LogIn</a></li>
+						<li><a href="registration.php" class="btn-default">Register</a></li>
 					</ul>
 					<a href="#" id="pull"><img src="images/menu-icon.png" title="menu" /></a>
 				</nav>

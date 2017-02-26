@@ -16,7 +16,7 @@
 
 
 	
-	$conn=mysqli_connect("localhost","root","0000","hospital");
+	$conn=mysqli_connect("localhost","root","","hospital");
 	$query = "INSERT INTO users VALUES ('".$id."','".$first."','".$last."','".$address."','".$city."','".$gender."','".$birthday."','".$identification."','".$phone."','".$email."','".$password."')";
 	mysqli_query($conn,$query);
 	header("location:../index.php");
