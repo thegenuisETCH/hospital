@@ -1,12 +1,13 @@
 import sys
 from PyQt5 import QtCore, QtGui , QtWidgets
 from PyQt5.QtGui import QIcon
+import home
 
 
 
+app = QtWidgets.QApplication(sys.argv)
+w = QtWidgets.QWidget()
 def window() :
-	app = QtWidgets.QApplication(sys.argv)
-	w = QtWidgets.QWidget()
 	#----------------window------------
 	w.setWindowTitle("Login")
 	w.setGeometry(400,250,340,305)
@@ -44,6 +45,7 @@ def window() :
 	btn_login.setFont(font)
 	btn_login.setGeometry(10,255,150,35)
 	btn_login.setStyleSheet("border-radius: 8px;background-color:rgb(223, 255, 196);")
+	btn_login.clicked.connect(login_btn)
 	#----------------cancel btn-----------
 	btn_cancel=QtWidgets.QPushButton(w)
 	btn_cancel.setText("cancel")
@@ -51,7 +53,7 @@ def window() :
 	btn_cancel.setGeometry(180,255,150,35)
 	btn_cancel.setStyleSheet("border-radius: 8px;background-color:rgb(223, 255, 196);")
 	btn_cancel.clicked.connect(cancel_btn)
-
+	
 	w.show()
 	sys.exit(app.exec_())
 
@@ -61,7 +63,7 @@ def window() :
 def cancel_btn() :
 	sys.exit()
 
-
-
+def login_btn() :
+	home.window_home()
 
 window()
