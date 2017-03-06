@@ -4,7 +4,7 @@ USE `hospital`;
 --
 -- Host: 127.0.0.1    Database: hospital
 -- ------------------------------------------------------
--- Server version	5.5.5-10.1.13-MariaDB
+-- Server version	5.5.5-10.1.21-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -18,6 +18,40 @@ USE `hospital`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `employee`
+--
+
+DROP TABLE IF EXISTS `employee`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `employee` (
+  `id` int(11) NOT NULL,
+  `first` text NOT NULL,
+  `last` text NOT NULL,
+  `address` varchar(45) NOT NULL,
+  `city` text NOT NULL,
+  `gender` text NOT NULL,
+  `birthdate` varchar(45) NOT NULL,
+  `identification` varchar(45) NOT NULL,
+  `phone` varchar(20) NOT NULL,
+  `type` text NOT NULL,
+  `department` text NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `password` varchar(42) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `employee`
+--
+
+LOCK TABLES `employee` WRITE;
+/*!40000 ALTER TABLE `employee` DISABLE KEYS */;
+/*!40000 ALTER TABLE `employee` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `users`
 --
 
@@ -26,14 +60,14 @@ DROP TABLE IF EXISTS `users`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `first` varchar(45) NOT NULL,
-  `last` varchar(45) NOT NULL,
+  `first` text NOT NULL,
+  `last` text NOT NULL,
   `address` text NOT NULL,
-  `city` varchar(45) NOT NULL,
-  `gender` varchar(45) NOT NULL,
-  `birthday` varchar(12) NOT NULL,
-  `Identification` bigint(20) NOT NULL,
-  `phone` int(20) NOT NULL,
+  `city` text NOT NULL,
+  `gender` text NOT NULL,
+  `birthdate` varchar(12) NOT NULL,
+  `Identification` varchar(25) NOT NULL,
+  `phone` varchar(20) NOT NULL,
   `email` varchar(45) NOT NULL,
   `password` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
@@ -46,7 +80,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (7,'hesham','hanafy','agamy bitash','alexandria','male','2017-02-16',2147483647,1024677811,'hesham_hanafy44@yahoo.com','123'),(8,'salvya','elmasry','smoha','alexandria','Female','1994-02-25',2147483647,2147483647,'salvya@yahoo.com','12344321');
+INSERT INTO `users` VALUES (7,'hesham','hanafy','agamy bitash','alexandria','male','2017-02-16','2147483647','1024677811','hesham_hanafy44@yahoo.com','123');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -63,4 +97,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-02-17 21:58:32
+-- Dump completed on 2017-03-06 19:48:17

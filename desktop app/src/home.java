@@ -49,6 +49,7 @@ public class home{
         btn_7.setPrefWidth(1300);
         btn_7.setPrefHeight(119);
         btn_7.setStyle("-fx-background-image:url('pic/7.jpg');");
+        btn_7.setDisable(true);
 
 
         GridPane root= new GridPane();
