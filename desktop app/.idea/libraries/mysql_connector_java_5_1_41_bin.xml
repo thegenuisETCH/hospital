@@ -2,6 +2,7 @@
   <library name="mysql-connector-java-5.1.41-bin">
     <CLASSES>
       <root url="jar://$USER_HOME$/Desktop/mysql-connector-java-5.1.41/mysql-connector-java-5.1.41-bin.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/sql/sqljdbc_6.0/enu/jre8/sqljdbc42.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

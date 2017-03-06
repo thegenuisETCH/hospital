@@ -11,8 +11,10 @@ public class database {
         ResultSet rs=null;
         Statement stmt=null;
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hospital", "root", "");
+            //Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            //con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hospital", "root", "");
+            con = DriverManager.getConnection("jdbc:sqlserver://ETCH","hesham","0000");
             //here sonoo is database name, root is username and password
             stmt = con.createStatement();
             rs = stmt.executeQuery(query);
