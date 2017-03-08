@@ -26,6 +26,7 @@ public class login extends Application {
     }
 
     database obj = new database();
+    home obj_home=new home();
     String user = "", pass = "", passdb = "";
     TextField inp_username;
     PasswordField inp_password;
@@ -82,7 +83,7 @@ public class login extends Application {
                     System.out.println(e);
                 }
                 if (pass.equals(passdb)) {
-                    home.home(primaryStage);
+                    obj_home.home(primaryStage);
                 } else {
                     JOptionPane.showMessageDialog(null, "Id or password is wrong try again please");
                 }

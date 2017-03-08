@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 
 public class home{
 
-    static void home (Stage homeStage){
+    public void home (Stage homeStage){
 
         homeStage.setTitle("Home");
 
