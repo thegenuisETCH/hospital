@@ -67,10 +67,9 @@ public class login extends Application {
 
 
         btn_login.setOnAction(new EventHandler<ActionEvent>() {
-
             @Override
             public void handle(ActionEvent event) {
-                user = inp_username.getText();
+                /*user = inp_username.getText();
                 pass = inp_password.getText();
                 ResultSet rs = obj.connectToDatabase("select password from users where id ="+user);
                 try {
@@ -86,7 +85,9 @@ public class login extends Application {
                     obj_home.home(primaryStage);
                 } else {
                     JOptionPane.showMessageDialog(null, "Id or password is wrong try again please");
-                }
+                }*/
+                room obj_emergency = new room();
+                obj_emergency.room(primaryStage);
             }
         });
 
@@ -96,7 +97,6 @@ public class login extends Application {
         btn_cancel.setPrefWidth(100);
         btn_cancel.setStyle("-fx-border-radius: 10px;-fx-background-color:rgb(223, 255, 196);-fx-font-family:'Segoe Print';-fx-font-size:18;-fx-font-weight:bolder;");
         btn_cancel.setOnAction(new EventHandler<ActionEvent>() {
-
             @Override
             public void handle(ActionEvent event) {
                 System.exit(1);
