@@ -104,6 +104,7 @@ public class login extends Application {
         });
 
 
+        ///////////////////////// Layouts ///////////////////////////////
         GridPane root = new GridPane();
         root.setPadding(new Insets(20, 20, 20, 20));
         root.setStyle("-fx-background-color:rgb(85, 170, 255);");

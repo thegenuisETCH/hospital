@@ -28,7 +28,6 @@ public class home{
                 obj_patient.patient(homeStage);
             }
         });
-
         Button btn_2 = new Button();
         btn_2.setPrefWidth(650);
         btn_2.setPrefHeight(175);
@@ -40,7 +39,6 @@ public class home{
                 obj_clinic.clinic(homeStage);
             }
         });
-
         Button btn_3 = new Button();
         btn_3.setPrefWidth(650);
         btn_3.setPrefHeight(174);
@@ -52,7 +50,6 @@ public class home{
                 obj_emergency.emergency(homeStage);
             }
         });
-
         Button btn_4 = new Button();
         btn_4.setPrefWidth(650);
         btn_4.setPrefHeight(174);
@@ -64,7 +61,6 @@ public class home{
                 obj_room.room(homeStage);
             }
         });
-
         Button btn_5 = new Button();
         btn_5.setPrefWidth(650);
         btn_5.setPrefHeight(182);
@@ -76,7 +72,6 @@ public class home{
                 obj_money.money(homeStage);
             }
         });
-
         Button btn_6 = new Button();
         btn_6.setPrefWidth(650);
         btn_6.setPrefHeight(182);
@@ -88,8 +83,6 @@ public class home{
                 obj_lap.lap(homeStage);
             }
         });
-
-
         Button btn_7 = new Button();
         btn_7.setPrefWidth(1300);
         btn_7.setPrefHeight(119);
@@ -101,11 +94,12 @@ public class home{
                 obj_registration.registration(homeStage);
             }
         });
-        //btn_7.setDisable(true);
 
 
 
 
+
+        ///////////////////////// Layouts ///////////////////////////////
         GridPane root= new GridPane();
         root.setStyle("-fx-background-color:rgb(85, 170, 255);");
         root.setPadding(new Insets(30, 30, 5, 30));
