@@ -15,6 +15,10 @@ import javafx.stage.Stage;
  */
 public class patient {
 
+    boolean down_flag;
+    GridPane down;
+
+
     public void patient (final Stage patientStage){
 
         patientStage.setTitle("Patient");
@@ -95,6 +99,7 @@ public class patient {
 
         TextField input_search;
         TextField id_search;
+        down_flag = false;
         Button check = new Button();
         check.setAlignment(Pos.CENTER);
         check.setText("check availbelty");
@@ -102,12 +107,15 @@ public class patient {
 
             @Override
             public void handle(ActionEvent event) {
-                System.exit(1);
+                //System.exit(1);
                /* namesearch=input_search.getText();
                 idsearch=id_search.getText();
                 if(namesearch.equals(databas)|| idsearch.equals(database))
                 {
                 }*/
+               down_flag=true;
+               down.setVisible(down_flag);
+
             }
         });
         Label or = new Label("or");
@@ -206,7 +214,7 @@ public class patient {
         up.add(id_search, 6, 2);
         up.add(check, 7, 2);
 
-        GridPane down = new GridPane();
+        down = new GridPane();
         down.add(f_name, 3, 1);
         down.add(name,4,1);
         down.add(p_number, 5, 1);
@@ -221,6 +229,7 @@ public class patient {
         down.setHgap(15);
         down.setVgap(30);
         down.setPadding(new Insets(80, 30, 30, 30));
+        down.setVisible(down_flag);
 
         bar.setPrefSize(150,50);
         bar.getChildren().addAll(btn_1,btn_2,btn_3,btn_4,btn_5,btn_6,btn_7,btn_8);
