@@ -1,12 +1,10 @@
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TreeItem;
-import javafx.scene.control.TreeView;
+import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
@@ -104,16 +102,58 @@ public class registration {
         TreeItem<String> registration_type = new TreeItem<String>("Registration types");
 
         TreeItem<String> stuff = new TreeItem<String>("Stuff");
-        TreeItem<String> stuff_in = new TreeItem<String>("Insert new employee");
-        TreeItem<String> stuff_update = new TreeItem<String>("Update existing employee");
-        TreeItem<String> stuff_delete = new TreeItem<String>("Delete employee");
-        stuff.getChildren().addAll(stuff_in, stuff_update, stuff_delete);
+        Button insert_stuff_btn =new Button("Insert new employee");
+        insert_stuff_btn.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                insertStuff(content);
+            }
+        });
+        Button update_stuff_btn =new Button("Update existing employee");
+        update_stuff_btn.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                updateStuff(content);
+            }
+        });
+        Button delete_stuff_btn =new Button("Delete employee");
+        delete_stuff_btn.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                deleteStuff(content);
+            }
+        });
+        TreeItem stuff_insert_item = new TreeItem(insert_stuff_btn);
+        TreeItem stuff_update_item = new TreeItem(update_stuff_btn);
+        TreeItem stuff_delete_item = new TreeItem(delete_stuff_btn);
+        stuff.getChildren().addAll(stuff_insert_item, stuff_update_item, stuff_delete_item);
 
         TreeItem<String> patient = new TreeItem<String>("Patient");
-        TreeItem<String> patient_in = new TreeItem<String>("Insert new patient");
-        TreeItem<String> patient_update = new TreeItem<String>("Update existing patient");
-        TreeItem<String> patient_delete = new TreeItem<String>("Delete patient");
-        patient.getChildren().addAll(patient_in, patient_update,patient_delete);
+        Button insert_patient_btn =new Button("Insert new patient");
+        insert_patient_btn.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                insertPatient(content);
+            }
+        });
+        Button update_patient_btn =new Button("Update existing patient");
+        update_patient_btn.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                updatePatient(content);
+            }
+        });
+        Button delete_patient_btn =new Button("Delete patient");
+        delete_patient_btn.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                deletePatient(content);
+            }
+        });
+        TreeItem patient_insert_item = new TreeItem(insert_patient_btn);
+        TreeItem patient_update_item = new TreeItem(update_patient_btn);
+        TreeItem patient_delete_item = new TreeItem(delete_patient_btn);
+        patient.getChildren().addAll(patient_insert_item, patient_update_item,patient_delete_item);
 
         registration_type.getChildren().addAll(stuff,patient);
         registration_type.setExpanded(true);
@@ -135,14 +175,16 @@ public class registration {
         FlowPane vbar_pane = new FlowPane();
 
         vbar_pane.getChildren().add(vbar);
-        vbar_pane.setPadding(new Insets(30, 10, 0, 0));
+        vbar_pane.setPadding(new Insets(30, 0, 0, 0));
 
         bar.setPrefSize(150, 50);
         bar.getChildren().addAll(btn_1, btn_2, btn_3, btn_4, btn_5, btn_6, btn_7, btn_8);
         bar.setAlignment(Pos.TOP_CENTER);
 
         content.add(description,2,2);
-        content.setAlignment(Pos.CENTER);
+        content.setPadding(new Insets(300,0,0,0));
+
+
 
         root.setTop(bar);
         root.setLeft(vbar_pane);
@@ -156,15 +198,82 @@ public class registration {
     }
     public void insertStuff(GridPane content) {
 
+        Label id,fname,lname,type,city,address,gender,birthDate,phone,email,password;
+        TextField id_in,fname_in,lname_in,city_in,address_in,birthDate_in,phone_in,email_in;
+        PasswordField password_in;
+        ChoiceBox gender_in,type_in;
+
+        id = new Label("ID");
+        id_in=new TextField("Enter ID");
+        fname=new Label("First Name");
+        fname_in=new TextField("Enter First Name");
+        lname = new Label("Last Name");
+        lname_in=new TextField("Enter last Name");
+        type= new Label("Job Name");
+        type_in=new ChoiceBox(FXCollections.observableArrayList("Doctor","Employee"));
+        city= new Label("City");
+        city_in=new TextField("Enter City");
+        address= new Label("Address");
+        address_in=new TextField("Enter Address");
+        gender= new Label("Gender");
+        gender_in=new ChoiceBox(FXCollections.observableArrayList("Male","Female"));
+        birthDate = new Label("Birth Date");
+        birthDate_in=new TextField("Enter Date of Birth");
+        phone= new Label("Phone Number");
+        phone_in=new TextField("Enter Phone Number");
+        email = new Label("Email");
+        email_in=new TextField("Enter email address");
+        password= new Label("Password");
+        password_in=new PasswordField();
+
+        Button submit=new Button("Submit");
+        submit.setPrefSize(300,50);
+        submit.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+
+
+            }
+        });
+
 
         content.getChildren().clear();
 
+        content.add(id,0,1);
+        content.add(id_in,1,1,3,1);
+        content.add(fname,0,2);
+        content.add(fname_in,1,2);
+        content.add(lname,2,2);
+        content.add(lname_in,3,2);
+        content.add(type,0,3);
+        content.add(type_in,1,3);
+        content.add(gender,2,3);
+        content.add(gender_in,3,3);
+        content.add(city,0,4);
+        content.add(city_in,1,4);
+        content.add(address,2,4);
+        content.add(address_in,3,4);
+        content.add(birthDate,0,5);
+        content.add(birthDate_in,1,5);
+        content.add(phone,2,5);
+        content.add(phone_in,3,5);
+        content.add(email,0,6);
+        content.add(email_in,1,6);
+        content.add(password,2,6);
+        content.add(password_in,3,6);
+        content.add(submit,1,7,2,1);
 
-        content.setAlignment(Pos.CENTER);
+
+
+
+        content.setVgap(50);
+        content.setHgap(50);
+        content.setPadding(new Insets(40,0,0,0));
+
         root.setCenter(content);
 
     }
-    public void updateStaff(GridPane content) {
+    public void updateStuff(GridPane content) {
 
 
         content.getChildren().clear();

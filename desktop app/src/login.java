@@ -86,8 +86,8 @@ public class login extends Application {
                 } else {
                     JOptionPane.showMessageDialog(null, "Id or password is wrong try again please");
                 }*/
-                room obj_emergency = new room();
-                obj_emergency.room(primaryStage);
+                registration obj_emergency = new registration();
+                obj_emergency.registration(primaryStage);
             }
         });
 

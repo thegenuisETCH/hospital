@@ -55,8 +55,8 @@
 							</div>
 							<div class="row">
 								<div class="col-sm-6 form-group">
-									<label>Birth of Date</label>
-									<input type="Date" placeholder="Enter Birth of Date Here.." class="form-control" name="birthday" id="birthday" required>
+									<label>Birth Date</label>
+									<input type="Date" placeholder="Enter Birth Date Here.." class="form-control" name="birthday" id="birthday" required>
 								</div>		
 								<div class="col-sm-6 form-group">
 									<label>Identification Number</label>
