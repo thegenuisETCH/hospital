@@ -107,15 +107,8 @@ public class patient {
 
             @Override
             public void handle(ActionEvent event) {
-                //System.exit(1);
-               /* namesearch=input_search.getText();
-                idsearch=id_search.getText();
-                if(namesearch.equals(databas)|| idsearch.equals(database))
-                {
-                }*/
                down_flag=true;
                down.setVisible(down_flag);
-
             }
         });
         Label or = new Label("or");
@@ -148,16 +141,10 @@ public class patient {
         id_search.setStyle("-fx-border-radius:15px;-fx-background-color:white");
 
 
-        // Patient_name.setAlignment(Pos.BOTTOM_LEFT);
-        // id.setAlignment(Pos.BOTTOM_LEFT);
-
-        //*lama ados 3ala el zorar informat1ion 7atzhar ta7t*/
-
         /////////////////////////////////////////////////////
 
         Label f_name = new Label();
         f_name.setText("Full Name:");
-        //f_name.setPrefWidth(100);
         f_name.setStyle("-fx-font-size:15");
 
 
