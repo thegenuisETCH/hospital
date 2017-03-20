@@ -455,9 +455,63 @@ public class registration {
     public void deleteStuff(GridPane content) {
 
 
+        Button check = new Button("Check Availbelty");
+        check.setOnAction(new EventHandler<ActionEvent>() {
+
+            @Override
+            public void handle(ActionEvent event) {
+                down_flag = true;
+                down.setVisible(down_flag);
+            }
+        });
+
+        Label or = new Label("or");
+        Label statment = new Label("Search by Employee name Or by Employee ID ");
+        statment.setStyle("-fx-font-family:'Segoe Print';-fx-font-size:28;-fx-font-weight:bolder;");
+
+
+
+        Label Patient_name = new Label("Employee Name:");
+        Patient_name.setStyle("-fx-font-size:15");
+
+        Label id = new Label("Employee ID:");
+        id.setStyle("-fx-font-size:15");
+
+        TextField input_search = new TextField();
+        input_search.setPromptText(" Search By name here");
+        input_search.setStyle("-fx-border-radius:15px;-fx-background-color:white");
+
+        TextField id_search = new TextField();
+        id_search.setPromptText("serach by ID here");
+        id_search.setStyle("-fx-border-radius:15px;-fx-background-color:white");
+
+        Label response_db = new Label();
+        response_db.setStyle("-fx-font-family:'Segoe Print';-fx-font-size:28;-fx-font-weight:bolder;");
+        response_db.setPadding(new Insets(100,0,0,0));
+        ///////////////////////////////////////////////////////////////
+
         content.getChildren().clear();
 
 
+        GridPane up = new GridPane();
+        up.setVgap(30);
+        up.setHgap(30);
+        up.add(statment, 1, 1, 6, 1);
+        up.add(Patient_name, 1, 2);
+        up.add(input_search, 2, 2);
+        up.add(or, 3, 2);
+        up.add(id, 4, 2);
+        up.add(id_search, 5, 2);
+        up.add(check, 6, 2);
+        up.setAlignment(Pos.TOP_CENTER);
+
+        down = new GridPane();
+        down.add(response_db,2,2);
+        down.setVisible(down_flag);
+        down.setAlignment(Pos.CENTER);
+
+        content.add(up, 1, 1);
+        content.add(down, 1, 2);
 
         root.setCenter(content);
 
@@ -706,10 +760,64 @@ public class registration {
     public void deletePatient(GridPane content) {
 
 
+        Button check = new Button("Check Availbelty");
+        check.setOnAction(new EventHandler<ActionEvent>() {
+
+            @Override
+            public void handle(ActionEvent event) {
+                down_flag = true;
+                down.setVisible(down_flag);
+            }
+        });
+
+        Label or = new Label("or");
+        Label statment = new Label("Search by Patient name Or by Patient ID ");
+        statment.setStyle("-fx-font-family:'Segoe Print';-fx-font-size:28;-fx-font-weight:bolder;");
+
+
+
+        Label Patient_name = new Label("Patient Name:");
+        Patient_name.setStyle("-fx-font-size:15");
+
+        Label id = new Label("Patient ID:");
+        id.setStyle("-fx-font-size:15");
+
+        TextField input_search = new TextField();
+        input_search.setPromptText(" Search By name here");
+        input_search.setStyle("-fx-border-radius:15px;-fx-background-color:white");
+
+        TextField id_search = new TextField();
+        id_search.setPromptText("serach by ID here");
+        id_search.setStyle("-fx-border-radius:15px;-fx-background-color:white");
+
+        Label response_db = new Label();
+        response_db.setStyle("-fx-font-family:'Segoe Print';-fx-font-size:28;-fx-font-weight:bolder;");
+        response_db.setPadding(new Insets(100,0,0,0));
+        ///////////////////////////////////////////////////////////////
+
         content.getChildren().clear();
 
 
-        content.setAlignment(Pos.CENTER);
+        GridPane up = new GridPane();
+        up.setVgap(30);
+        up.setHgap(30);
+        up.add(statment, 1, 1, 6, 1);
+        up.add(Patient_name, 1, 2);
+        up.add(input_search, 2, 2);
+        up.add(or, 3, 2);
+        up.add(id, 4, 2);
+        up.add(id_search, 5, 2);
+        up.add(check, 6, 2);
+        up.setAlignment(Pos.TOP_CENTER);
+
+        down = new GridPane();
+        down.add(response_db,2,2);
+        down.setVisible(down_flag);
+        down.setAlignment(Pos.CENTER);
+
+        content.add(up, 1, 1);
+        content.add(down, 1, 2);
+
         root.setCenter(content);
 
     }
